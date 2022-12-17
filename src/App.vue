@@ -1,18 +1,36 @@
 <template>
+  <div class="bg"></div>
   <div class="container">
     <nav>
-      <router-link to="/">Главная</router-link> | 
-      <router-link :to="{name: 'About'}">Обо мне</router-link> |
-      <router-link to="/hobby">Хобби</router-link> |
-      <router-link to="/study">Учёба</router-link> |
-      <router-link to="/photoalbum">Фотоальбом</router-link> |
-      <router-link to="/contacts">Контакты</router-link> |
-      <router-link to="/test">Тест</router-link> |
-      <router-link to="/history">История</router-link>
+      <router-link to="/">Главная</router-link> |
+      <router-link :to="{ name: 'About' }">Обо мне</router-link> |
+      <router-link :to="{ name: 'Hobby' }">Хобби</router-link> |
+      <router-link :to="{ name: 'Photoalbum' }">Фотоальбом</router-link> |
+      <router-link :to="{ name: 'Contact' }">Контакт</router-link> |
+      <router-link to="/users">Пользователи</router-link>
+      <button @click="redirect">Redirect</button>
+      <button @click="back">Go back</button>
+      <button @click="forward">Go forward</button>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+ export default {
+  methods: {
+    redirect() {
+      this.$router.push({name: 'Main'})
+    },
+    back() {
+      this.$router.go(-1);
+    },
+    forward() {
+      this.$router.go(1);
+    },
+  }
+ }
+</script>
 
 <style>
 * {
@@ -47,18 +65,38 @@ nav a.router-link-exact-active {
   background-color: #040012;
 }
 
+nav button {
+  margin: 0 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #000;
+  font-weight: 500;
+}
+
+nav button:hover {
+  border-radius: 0;
+}
+
 .container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
-.container:after {
-  content: " ";
+
+.bg {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url("assets/bg.jpg") no-repeat center;
+  background: url("assets/bg.jpg") repeat-y center;
   background-size: cover;
   z-index: -1;
   filter: blur(50px);

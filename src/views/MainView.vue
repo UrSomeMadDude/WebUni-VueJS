@@ -1,40 +1,40 @@
 <template>
   <div class="content-box">
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="2" class="text-header">
-                            <div class="bordered-header">
-                                Лабораторная работа №1
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="2" class="text-body">
-                            <div class="bordered">
-                                «Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS»
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="image" src="../assets/2.jpg" alt="text">
-                        </td>
-                        <td>
-                            <img class="image" src="../assets/facebook-clipart-css-3.png" alt="text">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2" class="text-header">
             <div class="bordered-header">
-                <p class="text-body"> Выполнил студент группы ИС/б-20-1-о</p>
+              Лабораторная работа №1
             </div>
-            <div class="bordered-header">
-                <p class="text-body"> Лысенко Игорь</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2" class="text-body">
+            <div class="bordered">
+              «Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS»
             </div>
-        </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img class="image" src="../assets/2.jpg" alt="text">
+          </td>
+          <td>
+            <img class="image" src="../assets/facebook-clipart-css-3.png" alt="text">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="bordered-header">
+      <p class="text-body"> Выполнил студент группы ИС/б-20-1-о</p>
+    </div>
+    <div class="bordered-header">
+      <p class="text-body"> Лысенко Игорь</p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  a {
+a {
   text-decoration: none;
 }
 
@@ -77,8 +77,10 @@ table {
 }
 
 .image {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 100px;
+  min-height: 100px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -100,7 +102,8 @@ table {
   background-color: #040012;
 }
 
-th, td {
+th,
+td {
   padding: 0;
   margin: 0;
 }
